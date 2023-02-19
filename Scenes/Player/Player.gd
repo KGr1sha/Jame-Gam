@@ -1,17 +1,26 @@
 extends KinematicBody2D
 
+var gravity = Vector2.DOWN * 1.5
+var jump_velocity = 0.0
+var JUMP_STRENGTH = -1.5
+var speed = 300
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	show()
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	pass
+	
+func _physics_process(delta):
+	
+	var move_direction = gravity
+	
+	if Input.is_action_pressed("move_left"):
+		move_direction.x = -1
+	if Input.is_action_pressed("move_right"):
+		move_direction.x = 1
+	if Input.is_action_pressed("jump") and is_on_floor():
+		jump_velocity = JUMP_STRENGTH
+	
+	if jump_velocity < 0.0:
+		jump_velocity += gravity.y * delta * 4
+		move_direction.y = jump_velocity
+	
+	move_and_slide(move_direction * speed, Vector2.UP)
