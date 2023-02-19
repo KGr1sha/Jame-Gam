@@ -6,6 +6,7 @@ var JUMP_STRENGTH = -1.5
 var speed = 300
 
 func _ready():
+	$AnimatedSprite.play("idle2")
 	pass
 	
 func _physics_process(delta):
