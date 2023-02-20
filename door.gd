@@ -10,7 +10,7 @@ func _ready():
 func _process(delta):
 	if bodyNearDoor and Input.is_action_just_pressed("use_items") \
 	and Global.isPlayerInStartScene:
-		get_tree().change_scene("res://Scenes/Restaurant.tscn")
+		get_tree().change_scene("res://Scenes/restaurant/Restaurant.tscn")
 		Global.isPlayerInStartScene = false
 		Global.isPlayerInRestaurant = true
 	elif bodyNearDoor and Input.is_action_just_pressed("use_items"):
