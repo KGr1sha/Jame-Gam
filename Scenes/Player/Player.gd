@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 
+var nearChief = false
 var gravity = Vector2.DOWN * 1.5
 var jump_velocity = 0.0
 var JUMP_STRENGTH = -3
@@ -11,7 +12,6 @@ func _ready():
 	$AnimatedSprite.play("idle2")
 	pass
 
-
 func _physics_process(delta):
 	
 	var move_direction = gravity
@@ -20,7 +20,8 @@ func _physics_process(delta):
 		move_direction.x = -1
 	if Input.is_action_pressed("move_right"):
 		move_direction.x = 1
-	if Input.is_action_pressed("jump") and is_on_floor():
+	if Input.is_action_pressed("jump") and is_on_floor() and \
+	Global.isPlayerInRestaurant == false:
 		jump_velocity = JUMP_STRENGTH
 	
 	if jump_velocity < 0.0:
