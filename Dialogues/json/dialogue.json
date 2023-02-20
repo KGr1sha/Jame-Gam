@@ -1,4 +1,14 @@
 [
-	{"name": "CHEF", "text": "Welcome, Player"},
-	{"name": "Player", "text": "Hi, can I order my favourite butter chicken?"},
+	{"name": "al' Pachino", "text": "Welcome"},
+	{"name": "Player", "text": "Hello, can I order my favourite butter chicken?"},
+	{"name": "al' Pachino", "text": "Sorry... We don't have butter chicken no more"},
+	{"name": "Player", "text": "WHAT?!"},
+	{"name": "al' Pachino", "text": "Seems like there are no chickens left in this valley("},
+	{"name": "Player", "text": "F*CK NO. Is there any place where I can get the BUTTER CHICKEN?"},
+	{"name": "al' Pachino", "text": "Yes, there is one, but it's faaaar away from here."},
+	{"name": "Player", "text": "Where? Tell me. I'll get there."},
+	{"name": "al' Pachino", "text": "HAHAHA. You fool. You ain't ready for this."},
+	{"name": "Player", "text": "OH I AM READY FOR ANYTHING TO GET THE BUTTER CHICKEN!!!"},
+	{"name": "al' Pachino", "text": "Okay. But it's gonna be a long journey."},
+	{"name": "al' Pachino", "text": "Here is the map"},
 ]
