@@ -5,6 +5,5 @@ func _ready():
 	pass
 
 func _process(delta):
+	print(Global.bodyPosition)
 	pass
-
-

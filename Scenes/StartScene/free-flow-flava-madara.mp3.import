@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/free-flow-flava-madara.mp3-1620352eb452696cfa0485d540ce5ed5.mp3str"
+
+[deps]
+
+source_file="res://Scenes/StartScene/free-flow-flava-madara.mp3"
+dest_files=[ "res://.import/free-flow-flava-madara.mp3-1620352eb452696cfa0485d540ce5ed5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

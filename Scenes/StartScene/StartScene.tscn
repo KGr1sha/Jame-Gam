@@ -119,7 +119,6 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 radius = 29.0172
 
 [node name="StartScene" type="Node2D"]
-position = Vector2( 201, -162 )
 script = ExtResource( 3 )
 
 [node name="TileMap2" type="TileMap" parent="."]
@@ -130,21 +129,16 @@ tile_data = PoolIntArray( 983021, 2, 65536, 983022, 2, 65537, 983023, 2, 65537, 
 
 [node name="Door" parent="." instance=ExtResource( 4 )]
 position = Vector2( 475, 841 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 385, 821 )
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2( 0, -80 )
-current = true
-zoom = Vector2( 0.4, 0.4 )
-smoothing_enabled = true
+next_scene_path = "res://Scenes/restaurant/Restaurant.tscn"
+spawnLocation = Vector2( 195, 36 )
 
 [node name="NextLevel" type="Area2D" parent="."]
-position = Vector2( 1153, 750 )
+position = Vector2( 1149, 741 )
 collision_layer = 4
 collision_mask = 2
 script = ExtResource( 6 )
+next_scene = "res://Scenes/level1/level1.tscn"
+SpawnLocation = Vector2( 0, 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevel"]
 position = Vector2( 354, 86 )
@@ -156,7 +150,7 @@ shape = SubResource( 5 )
 motion_mirroring = Vector2( 3200, 1800 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 17, 3.00001 )
+position = Vector2( 16, 9 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 7 )
 centered = false
@@ -205,6 +199,9 @@ position = Vector2( 1442, 455 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 8 )
 centered = false
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 382, 857 )
 
 [connection signal="body_entered" from="NextLevel" to="NextLevel" method="_on_NextLevel_body_entered"]
 [connection signal="body_exited" from="NextLevel" to="NextLevel" method="_on_NextLevel_body_exited"]

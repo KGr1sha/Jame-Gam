@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 
-var nearChief = false
 var gravity = Vector2.DOWN * 1.5
 var jump_velocity = 0.0
 var JUMP_STRENGTH = -3
@@ -10,6 +9,7 @@ var speed = 150
 
 func _ready():
 	$AnimatedSprite.play("idle2")
+	self.global_position = Global.bodyPosition
 	pass
 
 func _physics_process(delta):
