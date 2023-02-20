@@ -14,7 +14,11 @@ func _ready():
 
 func _process(delta):
 	if bodyNearChief and Input.is_action_just_pressed("use_items"):
-		dialogue()
+		if Global.talkedWithChief == false:
+			dialogue()
+		else:
+			dialogue_after()
+			
 		pass
 	
 func _on_chief_body_entered(body):
@@ -56,3 +60,11 @@ func load_dialogue():
 	if file.file_exists(d_file):
 		file.open(d_file, File.READ)
 		return parse_json(file.get_as_text())
+
+func dialogue_after():
+	print('11111')
+	Text.text = 'Good luck!'
+	Name.text = "al' Pachino"
+	$Dialogue.show()
+	yield(get_tree().create_timer(3), "timeout")
+	$Dialogue.hide()
