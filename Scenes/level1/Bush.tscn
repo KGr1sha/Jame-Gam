@@ -1,76 +1,65 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/level1/Bush.gd" type="Script" id=1]
-[ext_resource path="res://assets/Player/main_character.png" type="Texture" id=2]
-[ext_resource path="res://assets/Player/Player4FPS.png" type="Texture" id=3]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 20.0
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 32, 32 )
+[ext_resource path="res://assets/bush/bush.png" type="Texture" id=2]
+[ext_resource path="res://assets/Fonts/ExpressionPro.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 0, 32, 32 )
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 105, 100 )
 
 [sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 32, 32, 32 )
+atlas = ExtResource( 2 )
+region = Rect2( 105, 0, 105, 100 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 32, 32, 32 )
+atlas = ExtResource( 2 )
+region = Rect2( 210, 0, 105, 100 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 40 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 32, 40 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 40, 32, 40 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 40, 32, 40 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 80, 32, 40 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 80, 32, 40 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 120, 32, 40 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 120, 32, 40 )
+region = Rect2( 315, 0, 105, 100 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": false,
 "name": "default",
-"speed": 30.0
+"speed": 10.0
 } ]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 35.0571
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0.117647, 0.113725, 0.113725, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Bush" type="Area2D"]
 script = ExtResource( 1 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 2 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+[node name="Tip" type="Control" parent="."]
+visible = false
+margin_left = -61.0
+margin_top = -94.0
+margin_right = 70.0
+margin_bottom = -30.0
+
+[node name="Label" type="Label" parent="Tip"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "E - fumble"
+align = 1
+valign = 1
 
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]

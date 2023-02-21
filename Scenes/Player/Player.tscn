@@ -78,7 +78,7 @@ animations = [ {
 "speed": 2.0
 }, {
 "frames": [ ExtResource( 5 ) ],
-"loop": true,
+"loop": false,
 "name": "jump",
 "speed": 5.0
 }, {
@@ -98,7 +98,7 @@ position = Vector2( 0, -21 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1, -24 )
+position = Vector2( 0, -24 )
 frames = SubResource( 6 )
 animation = "jump"
 
@@ -106,6 +106,7 @@ animation = "jump"
 offset = Vector2( 0, -80 )
 current = true
 zoom = Vector2( 0.4, 0.4 )
+smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2

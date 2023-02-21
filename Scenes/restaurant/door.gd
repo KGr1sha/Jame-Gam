@@ -11,9 +11,12 @@ func _ready():
 
 func _process(delta):
 	if bodyNearDoor and Input.is_action_just_pressed("use_items"):
-		Global.bodyPosition = spawnLocation
-		get_tree().change_scene(next_scene_path)
-
+			Global.bodyPosition = spawnLocation
+			get_tree().change_scene(next_scene_path)
+	if bodyNearDoor:
+		$Tip.show()
+	else:
+		$Tip.hide()
 
 func _on_Door_body_entered(body):
 	if body.name == "Player":

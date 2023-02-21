@@ -4,7 +4,7 @@ extends KinematicBody2D
 var gravity = Vector2.DOWN * 1.5
 var jump_velocity = 0.0
 var JUMP_STRENGTH = -2
-var speed = 600 #150
+var speed = 150 #150
 
 
 func _ready():
