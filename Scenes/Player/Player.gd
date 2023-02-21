@@ -3,8 +3,8 @@ extends KinematicBody2D
 
 var gravity = Vector2.DOWN * 1.5
 var jump_velocity = 0.0
-var JUMP_STRENGTH = -3
-var speed = 150
+var JUMP_STRENGTH = -2
+var speed = 600 #150
 
 
 func _ready():
@@ -15,12 +15,12 @@ func _physics_process(delta):
 	
 	var move_direction = gravity
 
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left") and Global.freezed == false:
 		move_direction.x = -1
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right") and Global.freezed == false:
 		move_direction.x = 1
 	if Input.is_action_pressed("jump") and is_on_floor() and \
-	Global.isPlayerInRestaurant == false:
+	Global.isPlayerInRestaurant == false and Global.freezed == false:
 		jump_velocity = JUMP_STRENGTH
 	
 	_play_move_animation(move_direction)
@@ -43,6 +43,3 @@ func _play_move_animation(move_direction):
 		$AnimatedSprite.flip_h = false
 	elif move_direction.x < 0:
 		$AnimatedSprite.flip_h = true
-		
-	
-	
