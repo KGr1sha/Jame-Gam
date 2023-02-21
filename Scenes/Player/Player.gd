@@ -35,10 +35,14 @@ func _play_move_animation(move_direction):
 		$AnimatedSprite.play("idle")
 	elif move_direction.x != 0 and is_on_floor():
 		$AnimatedSprite.play("run")
+	
+	if not is_on_floor():
+		$AnimatedSprite.play("jump")
 		
 	if move_direction.x > 0:
 		$AnimatedSprite.flip_h = false
 	elif move_direction.x < 0:
 		$AnimatedSprite.flip_h = true
 		
-	pass
+	
+	
