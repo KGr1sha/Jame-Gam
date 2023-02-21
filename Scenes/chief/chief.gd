@@ -18,8 +18,15 @@ func _process(delta):
 			dialogue()
 		else:
 			dialogue_after()
+	
+	if bodyNearChief:
+		if not dialogue_active:
+			$Tip.show()
+		else:
+			$Tip.hide()
+	else:
+		$Tip.hide()
 			
-		pass
 	
 func _on_chief_body_entered(body):
 	if body.name == 'Player':

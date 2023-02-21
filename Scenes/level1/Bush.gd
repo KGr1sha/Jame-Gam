@@ -46,7 +46,11 @@ func _process(_delta):
 		Global.freezed = true
 		yield(get_tree().create_timer(timerItemsFromBush), "timeout")
 		Global.freezed = false
-		pass
+	
+	if isBodyNearBush:
+		$Tip.show()
+	else:
+		$Tip.hide()
 
 
 func _on_Area2D_body_entered(body):

@@ -22,8 +22,8 @@ BackGroundMusic="*res://Scenes/Music/BackGroundMusic.tscn"
 
 [display]
 
-window/size/width=320
-window/size/height=180
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
