@@ -4,7 +4,7 @@ extends KinematicBody2D
 var gravity = Vector2.DOWN * 1.5
 var jump_velocity = 0.0
 var JUMP_STRENGTH = -2
-var speed = 600 #150
+var speed = 200 #150
 
 
 func _ready():
@@ -24,9 +24,12 @@ func _physics_process(delta):
 		jump_velocity = JUMP_STRENGTH
 	
 	_play_move_animation(move_direction)
+	
 	if jump_velocity < 0.0:
 		jump_velocity += gravity.y * delta * 4
 		move_direction.y = jump_velocity
+	if is_on_ceiling():
+		jump_velocity = 0
 	
 	move_and_slide(move_direction * speed, Vector2.UP)
 
