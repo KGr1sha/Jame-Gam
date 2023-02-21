@@ -34,7 +34,6 @@ func _on_chief_body_exited(body):
 
 func dialogue():
 	dialogue_active = true
-	Global.talkedWithChief = true
 	$Dialogue.show()
 	dialogue = load_dialogue()
 	next_script()
@@ -49,6 +48,7 @@ func next_script():
 	current_dialogue_id += 1
 	if current_dialogue_id >= len(dialogue):
 		current_dialogue_id = -1
+		Global.talkedWithChief = true
 		$Dialogue.hide()
 		dialogue_active = false
 	Text.text = dialogue[current_dialogue_id]['text']
@@ -62,7 +62,6 @@ func load_dialogue():
 		return parse_json(file.get_as_text())
 
 func dialogue_after():
-	print('11111')
 	Text.text = 'Good luck!'
 	Name.text = "al' Pachino"
 	$Dialogue.show()
