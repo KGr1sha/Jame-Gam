@@ -62,7 +62,6 @@ func load_dialogue():
 		return parse_json(file.get_as_text())
 
 func dialogue_after():
-	print('11111')
 	Text.text = 'Good luck!'
 	Name.text = "al' Pachino"
 	$Dialogue.show()
