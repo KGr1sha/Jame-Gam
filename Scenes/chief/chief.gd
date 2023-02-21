@@ -17,10 +17,11 @@ func _process(delta):
 	if bodyNearChief and Input.is_action_just_pressed("use_items"):
 		if Global.talkedWithChief == false:
 			dialogue()
-		else:
+		elif dialogue_active == false:
 			dialogue_after()
 	
-	if Input.is_action_just_pressed("left_mb_click") and dialogue_active:
+	if Input.is_action_just_pressed("left_mb_click") and dialogue_active \
+	and Global.talkedWithChief == false:
 		next_script()
 	
 	
