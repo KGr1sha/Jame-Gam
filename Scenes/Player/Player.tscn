@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Player/Player4FPS.png" type="Texture" id=2]
 [ext_resource path="res://assets/Player/Player2FPS.png" type="Texture" id=3]
 [ext_resource path="res://assets/Player/main_character.png" type="Texture" id=4]
 [ext_resource path="res://assets/Player/jump_frame.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Inventory/Inventory.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12, 13 )
@@ -106,7 +107,14 @@ animation = "jump"
 offset = Vector2( 0, -80 )
 current = true
 zoom = Vector2( 0.6, 0.6 )
-smoothing_enabled = true
+
+[node name="Inventory" parent="Camera2D" instance=ExtResource( 6 )]
+margin_left = -65.0
+margin_top = 53.0
+margin_right = -65.0
+margin_bottom = 53.0
+size_flags_horizontal = 6
+size_flags_vertical = 10
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
