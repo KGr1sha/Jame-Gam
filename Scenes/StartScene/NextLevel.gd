@@ -4,6 +4,8 @@ extends Area2D
 var bodyNearNextLevel1 = false
 export (String, FILE) var next_scene = ""
 export (Vector2) var SpawnLocation = Vector2.ZERO
+
+
 func _ready():
 	pass
 
