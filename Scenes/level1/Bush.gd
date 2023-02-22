@@ -24,11 +24,13 @@ func _process(_delta):
 
 func drop_item():
 	var item_name
+	Global.freeze(1)
 	if Global.cntLevel1 == 2:
 		item_name = 'nails'
-
 	elif Global.cntLevel1 == 3:
 		item_name = 'sticks'
+	elif Global.cntLevel1 == 4:
+		item_name = 'rope'
 			
 	PlayerInventory.add_item(item_name)
 	
@@ -36,13 +38,6 @@ func drop_item():
 		$Tip/Label.text = 'You found ' + item_name
 		yield(get_tree().create_timer(1), 'timeout')
 		$Tip/Label.text = 'E - fumble'
-
-
-
-
-
-
-
 
 
 func _on_Area2D_body_entered(body):
