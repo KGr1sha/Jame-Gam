@@ -28,7 +28,7 @@ func _on_beforeBridge_body_entered(body):
 	for i in inventory:
 		if not inventory[i][1]:
 			needed_items.append(inventory[i][0])
-	if needed_items:
+	if needed_items and not bridge_builded:
 		var s = ''
 		for i in range(len(needed_items)):
 			if i != len(needed_items) - 1:
@@ -52,6 +52,11 @@ func _on_beforeBridge_body_exited(body):
 	
 func build():
 	$Bridge/Tip.hide()
+	PlayerInventory.inventory = {
+	 0: ['sticks', false],
+	 1: ['nails', false],
+	 2: ['rope', false]
+}
 	var firstX = 2957
 	Global.freeze(5)
 	bridge_builded = true

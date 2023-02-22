@@ -10,5 +10,7 @@ func _process(delta):
 	for i in (inventory):
 		if inventory[i][1]:
 			slots[i].add_item_to_slot(inventory[i][0])
+		else:
+			slots[i].remove_item()
 
 	
