@@ -17,3 +17,14 @@ func remove_item():
 	if items:
 		for item in items:
 			item.remove_item()
+
+func use_item(item_name):
+	if item_name == 'STANGEBERRY':
+		remove_child(item)
+		print('whynotwork')
+		Global.jump_strength = -7
+		
+		for item in PlayerInventory.inventory:
+			if PlayerInventory.inventory[item] == item_name:
+				PlayerInventory.inventory[item] = ''
+				PlayerInventory.free_slots += 1

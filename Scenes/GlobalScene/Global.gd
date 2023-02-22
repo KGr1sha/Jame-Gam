@@ -6,6 +6,7 @@ var isPlayerInRestaurant = false
 var bodyPosition = Vector2(0, -10)
 var freezed := false
 var cntLevel1 = 0
+var jump_strength = -3
 
 func _ready():
 	pass

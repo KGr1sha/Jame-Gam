@@ -2,13 +2,15 @@ extends Node
 
 
 var inventory = {
-	 0: ['sticks', false],
-	 1: ['nails', false],
-	 2: ['rope', false]
+	 0: '',
+	 1: '',
+	 2: ''
 }
+var free_slots = 3
 
 func add_item(item_name):
-	for i in inventory:
-		if inventory[i][0] == item_name:
-			inventory[i][1] = true
-
+	for i in range(3):
+		if inventory[i] == '' and item_name:
+			inventory[i] = item_name
+			free_slots -= 1
+			break
