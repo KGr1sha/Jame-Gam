@@ -1,5 +1,7 @@
 extends Node2D
 
+var item_name: String
+
 
 func _ready():
 	if Global.talkedWithChief == true:

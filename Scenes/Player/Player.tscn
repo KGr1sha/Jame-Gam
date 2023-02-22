@@ -106,19 +106,7 @@ animation = "jump"
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -80 )
 current = true
-<<<<<<< HEAD
-zoom = Vector2( 0.6, 0.6 )
-
-[node name="Inventory" parent="Camera2D" instance=ExtResource( 6 )]
-margin_left = -65.0
-margin_top = 53.0
-margin_right = -65.0
-margin_bottom = 53.0
-size_flags_horizontal = 6
-size_flags_vertical = 10
-=======
 smoothing_enabled = true
->>>>>>> c42ad99b4453fd3db8a6d2f41dfe22aa5027949e
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -127,3 +115,7 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0, -21 )
 shape = SubResource( 1 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="UI" instance=ExtResource( 6 )]
