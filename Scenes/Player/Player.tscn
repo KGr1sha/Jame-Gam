@@ -105,7 +105,6 @@ animation = "jump"
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -80 )
 current = true
-zoom = Vector2( 0.6, 0.6 )
 smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
