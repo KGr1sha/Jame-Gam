@@ -5,7 +5,6 @@ var timerItemsFromBush = 1
 var used = false
 
 
-
 func _process(_delta):
 	if isBodyNearBush and Input.is_action_just_pressed("use_items") and used == false:
 		Global.cntLevel1 += 1
