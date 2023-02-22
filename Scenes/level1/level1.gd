@@ -1,5 +1,7 @@
 extends Node2D
 
+export(PackedScene) var bridgesprite_scene
+
 var beforeBridgeChecker = false
 var beforeBridgeTalkedChecker = false
 var level1FinishedChecker = false
@@ -8,13 +10,14 @@ var items_collected = false
 var near_bridge = false
 var bridge_builded = false
 
-
 func _ready():
 	get_node("Bridge/Sprite").hide()
 
 
 func _process(_delta):
 	if near_bridge and items_collected and Input.is_action_just_pressed("use_items") and not bridge_builded:
+		build()
+	if Input.is_action_just_pressed("test_input"):
 		build()
 
 
@@ -49,9 +52,16 @@ func _on_beforeBridge_body_exited(body):
 	
 func build():
 	$Bridge/Tip.hide()
+	var firstX = 2957
+	Global.freeze(5)
 	bridge_builded = true
-	#Тут надо построить мост
-	
-	pass
-	
+	for i in range(24):
+		var bridgeSprite = bridgesprite_scene.instance()
+		bridgeSprite.offset.x = firstX
+		bridgeSprite.offset.y = 176
+		add_child(bridgeSprite)
+		firstX += 32
+		yield(get_tree().create_timer(0.21), "timeout")
+	$Bridge/CollisionShape2D.disabled = false
+	$CLOSED/CollisionShape2D.disabled = true
 	

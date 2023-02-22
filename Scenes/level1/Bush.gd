@@ -3,17 +3,18 @@ extends Area2D
 var isBodyNearBush = false
 var timerItemsFromBush = 1
 var used = false
-
+var animationPlaying = false
 
 func _process(_delta):
-	if isBodyNearBush and Input.is_action_just_pressed("use_items") and used == false:
+	if isBodyNearBush and Input.is_action_just_pressed("use_items") and \
+	used == false and animationPlaying == false:
 		Global.cntLevel1 += 1
-		$AnimatedSprite.play()
+		playAnimation()
 		used = true
 		drop_item()
-	elif isBodyNearBush and Input.is_action_just_pressed("use_items") and used:
-		$AnimatedSprite.frame = 0
-		$AnimatedSprite.play()
+	elif isBodyNearBush and Input.is_action_just_pressed("use_items") and used \
+	and animationPlaying == false:
+		playAnimation()
 	
 	if isBodyNearBush:
 		$Tip.show()
@@ -38,6 +39,12 @@ func drop_item():
 		yield(get_tree().create_timer(1), 'timeout')
 		$Tip/Label.text = 'E - fumble'
 
+func playAnimation():
+	animationPlaying = true
+	$AnimatedSprite.frame = 0
+	$AnimatedSprite.play()
+	yield(get_tree().create_timer(1), "timeout")
+	animationPlaying = false
 
 func _on_Area2D_body_entered(body):
 	isBodyNearBush = true
