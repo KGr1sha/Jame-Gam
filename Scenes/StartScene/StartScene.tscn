@@ -144,7 +144,6 @@ position = Vector2( 475, -22 )
 next_scene_path = "res://Scenes/restaurant/Restaurant.tscn"
 
 [node name="Tip" type="Control" parent="Door"]
-visible = false
 margin_left = -18.0
 margin_top = -68.0
 margin_right = 56.0
