@@ -24,19 +24,17 @@ func _process(_delta):
 func _on_beforeBridge_body_entered(body):
 	near_bridge = true
 	var inventory = PlayerInventory.inventory
-	var needed_items = []
-	for i in inventory:
-		if not inventory[i][1]:
-			needed_items.append(inventory[i][0])
-	if needed_items and not bridge_builded:
-		var s = ''
-		for i in range(len(needed_items)):
-			if i != len(needed_items) - 1:
-				s += needed_items[i] + ', '
-			else:
-				s += needed_items[i]
-		$Bridge/Tip.text = 'You need ' + s + ' to build the bridge'
-		$Bridge/Tip.show()
+	var needed_items = ['nails', 'rope', 'sticks']
+	var needed_string = ''
+	var has_items = []
+	for slot in inventory:
+		var item = inventory[slot]
+		if item in needed_items:
+			needed_items.remove(needed_items.find(item))
+	for n_item in needed_items:
+		needed_string += n_item 
+	if needed_items:
+		$Bridge/Tip.text = 'You need ' + needed_string + ' to build the bridge'
 	else:
 		if bridge_builded == false:
 			$Bridge/Tip.text = 'E - build the bridge'
@@ -53,10 +51,11 @@ func _on_beforeBridge_body_exited(body):
 func build():
 	$Bridge/Tip.hide()
 	PlayerInventory.inventory = {
-	 0: ['sticks', false],
-	 1: ['nails', false],
-	 2: ['rope', false]
-}
+	 0: '',
+	 1: '',
+	 2: ''
+	}
+	PlayerInventory.free_slots = 3
 	var firstX = 2957
 	Global.freeze(5)
 	bridge_builded = true

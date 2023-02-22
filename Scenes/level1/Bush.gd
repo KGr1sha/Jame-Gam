@@ -8,9 +8,7 @@ var animationPlaying = false
 func _process(_delta):
 	if isBodyNearBush and Input.is_action_just_pressed("use_items") and \
 	used == false and animationPlaying == false:
-		Global.cntLevel1 += 1
 		playAnimation()
-		used = true
 		drop_item()
 	elif isBodyNearBush and Input.is_action_just_pressed("use_items") and used \
 	and animationPlaying == false:
@@ -25,14 +23,22 @@ func _process(_delta):
 func drop_item():
 	var item_name
 	Global.freeze(1)
-	if Global.cntLevel1 == 2:
+	if Global.cntLevel1 == 1:
 		item_name = 'nails'
-	elif Global.cntLevel1 == 3:
+	elif Global.cntLevel1 == 2:
 		item_name = 'sticks'
+	elif Global.cntLevel1 == 3:
+		item_name = 'STANGEBERRY'
 	elif Global.cntLevel1 == 4:
 		item_name = 'rope'
-			
-	PlayerInventory.add_item(item_name)
+	if PlayerInventory.free_slots != 0:
+		used = true
+		Global.cntLevel1 += 1
+		PlayerInventory.add_item(item_name)
+	else:
+		$Tip/Label.text = 'No free slots'
+		yield(get_tree().create_timer(1), 'timeout')
+		$Tip/Label.text = 'E - fumble'
 	
 	if item_name:
 		$Tip/Label.text = 'You found ' + item_name
