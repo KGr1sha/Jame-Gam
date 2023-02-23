@@ -11,10 +11,21 @@ func _process(delta):
 
 	
 func _input(event):
-	if event.is_action_pressed("slot_3") and PlayerInventory.inventory.has(2) and PlayerInventory.inventory[2] == 'STANGEBERRY':
-		emit_signal("eat_berry")
-		PlayerInventory.remove_item(2)
-
+	var using_item = ''
+	var item_index: int
+	if event.is_action_pressed("slot_1") and PlayerInventory.inventory.has(0):
+		using_item = inventory[0]
+		item_index = 0
+	elif event.is_action_pressed("slot_2") and PlayerInventory.inventory.has(1):
+		using_item = inventory[1]
+		item_index = 1
+	elif event.is_action_pressed("slot_3") and PlayerInventory.inventory.has(2):
+		using_item = inventory[2]
+		item_index = 2
+	if using_item == 'STANGEBERRY':
+		emit_signal('eat_berry')
+		PlayerInventory.remove_item(item_index)
+		
 
 func update_inventory():
 	for i in range(3):

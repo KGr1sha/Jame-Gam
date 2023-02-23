@@ -196,7 +196,7 @@ position = Vector2( -56, -174 )
 position = Vector2( -9, 130 )
 frames = SubResource( 9 )
 animation = "run"
-frame = 4
+frame = 3
 playing = true
 
 [node name="Bed" type="Sprite" parent="."]
