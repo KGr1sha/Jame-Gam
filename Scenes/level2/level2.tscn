@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/level2/level2.gd" type="Script" id=1]
 [ext_resource path="res://assets/ground/tree3.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/ground/realEnt.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/level2/Ent.gd" type="Script" id=9]
+[ext_resource path="res://assets/ground/strangeHouse.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -162,7 +163,6 @@ script = ExtResource( 9 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Ent"]
 frames = SubResource( 10 )
 animation = "run"
-frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="Ent"]
@@ -172,6 +172,10 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ent/Area2D"]
 position = Vector2( -1, 1 )
 shape = SubResource( 11 )
+
+[node name="StrangeHouse" type="Sprite" parent="."]
+position = Vector2( 2768, -64 )
+texture = ExtResource( 10 )
 
 [connection signal="body_entered" from="EntTrigger" to="." method="_on_EntTrigger_body_entered"]
 [connection signal="body_entered" from="Ent/Area2D" to="." method="Ent_catch"]
