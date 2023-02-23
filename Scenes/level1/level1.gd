@@ -20,6 +20,7 @@ func _process(_delta):
 		build()
 	if Input.is_action_just_pressed("test_input"):
 		Global.talkedWithChief = true
+		$Player/UI/Inventory.emit_signal("eat_berry")
 		build()
 
 

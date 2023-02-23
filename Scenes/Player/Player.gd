@@ -3,9 +3,8 @@ extends KinematicBody2D
 
 var gravity = Vector2.DOWN * 1.5
 var jump_velocity = 0.0
-var jump_strength
 var speed = 150 #150
-
+var jump_strength = -3
 
 
 func _ready():
@@ -13,7 +12,6 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	jump_strength = Global.jump_strength
 	var move_direction = gravity
 
 	if Input.is_action_pressed("move_left") and Global.freezed == false:
@@ -60,7 +58,7 @@ func _on_Inventory_eat_berry():
 		$PlayerSpeak/VBoxContainer/HBoxContainer/Label.text += end_print[i]
 		yield(get_tree().create_timer(0.1), "timeout")
 	yield(get_tree().create_timer(1), "timeout")
-	jump_strength = -10
+	jump_strength = -7
 	$PlayerSpeak.hide()
 	$PlayerSpeak/VBoxContainer/HBoxContainer/Label.text = ''
 
