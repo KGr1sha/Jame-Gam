@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/ground/ground_tileset.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/restaurant/door.tscn" type="PackedScene" id=2]
@@ -15,6 +15,11 @@
 [ext_resource path="res://assets/Restaurant/mini-bar.png" type="Texture" id=13]
 [ext_resource path="res://assets/Restaurant/table.png" type="Texture" id=14]
 [ext_resource path="res://assets/Restaurant/beer.png" type="Texture" id=15]
+[ext_resource path="res://assets/Restaurant/normalDoor.png" type="Texture" id=16]
+[ext_resource path="res://assets/Restaurant/paint1.png" type="Texture" id=17]
+[ext_resource path="res://assets/Restaurant/window.png" type="Texture" id=18]
+[ext_resource path="res://assets/Restaurant/paint2.png" type="Texture" id=19]
+[ext_resource path="res://assets/Restaurant/paint3.png" type="Texture" id=20]
 
 [sub_resource type="TileSet" id=12]
 0/name = "backgroundtile.png 0"
@@ -205,6 +210,29 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 15 )
 flip_h = true
 
+[node name="Paint1" type="Sprite" parent="background"]
+position = Vector2( 454, -94 )
+texture = ExtResource( 17 )
+
+[node name="Window2" type="Sprite" parent="background"]
+position = Vector2( 392, -73 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 18 )
+
+[node name="Window" type="Sprite" parent="background"]
+position = Vector2( 30, -75 )
+rotation = 3.14159
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 18 )
+
+[node name="Paint2" type="Sprite" parent="background"]
+position = Vector2( 185, -93 )
+texture = ExtResource( 19 )
+
+[node name="Paint3" type="Sprite" parent="background"]
+position = Vector2( 304, -93 )
+texture = ExtResource( 20 )
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, -32 )
 tile_set = SubResource( 4 )
@@ -218,11 +246,10 @@ next_scene_path = "res://Scenes/StartScene/StartScene.tscn"
 spawnLocation = Vector2( 475, -30 )
 
 [node name="Tip" type="Control" parent="Door"]
-visible = false
 margin_left = -18.0
-margin_top = -68.0
+margin_top = -92.0
 margin_right = 56.0
-margin_bottom = -24.0
+margin_bottom = -48.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Door/Tip"]
 anchor_right = 1.0
@@ -337,6 +364,11 @@ texture = ExtResource( 8 )
 position = Vector2( 347, -10 )
 scale = Vector2( 1.1, 1.3 )
 texture = ExtResource( 8 )
+
+[node name="NormalDoor" type="Sprite" parent="."]
+position = Vector2( 113, -67 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 16 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 117, 7 )
