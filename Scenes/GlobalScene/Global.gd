@@ -7,6 +7,7 @@ var bodyPosition = Vector2(0, -10)
 var freezed := false
 var cntLevel1 = 1
 var talked_to_bridge = false
+var catched = false
 
 func _ready():
 	pass

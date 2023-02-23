@@ -1,6 +1,7 @@
 extends Control
 
 signal eat_berry
+signal eat_just_berry
 var inventory = {}
 const SlotClass = preload("res://Scenes/Inventory/Slot.gd")
 onready var slots = $MarginContainer/VBoxContainer/HBoxContainer/GridContainer.get_children()
@@ -24,6 +25,9 @@ func _input(event):
 		item_index = 2
 	if using_item == 'STANGEBERRY':
 		emit_signal('eat_berry')
+		PlayerInventory.remove_item(item_index)
+	elif using_item == 'justberry':
+		emit_signal('eat_just_berry')
 		PlayerInventory.remove_item(item_index)
 		
 

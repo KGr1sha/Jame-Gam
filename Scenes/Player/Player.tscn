@@ -122,6 +122,8 @@ shape = SubResource( 1 )
 [node name="Inventory" parent="UI" instance=ExtResource( 6 )]
 
 [node name="PlayerSpeak" parent="UI" instance=ExtResource( 7 )]
+visible = false
 size_flags_horizontal = 6
 
 [connection signal="eat_berry" from="UI/Inventory" to="." method="_on_Inventory_eat_berry"]
+[connection signal="eat_just_berry" from="UI/Inventory" to="." method="_on_Inventory_eat_just_berry"]

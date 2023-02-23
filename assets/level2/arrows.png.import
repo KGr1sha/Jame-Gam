@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/justberry.png-eeee95c239a0dc43274d791d3404d4cb.stex"
+path="res://.import/arrows.png-241fffda750484dce6d329fafa0e5dbe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level2/justberry.png"
-dest_files=[ "res://.import/justberry.png-eeee95c239a0dc43274d791d3404d4cb.stex" ]
+source_file="res://assets/level2/arrows.png"
+dest_files=[ "res://.import/arrows.png-241fffda750484dce6d329fafa0e5dbe.stex" ]
 
 [params]
 
