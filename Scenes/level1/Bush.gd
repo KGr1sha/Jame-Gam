@@ -14,7 +14,7 @@ func _process(_delta):
 	and animationPlaying == false:
 		playAnimation()
 	
-	if isBodyNearBush:
+	if isBodyNearBush and Global.talked_to_bridge:
 		$Tip.show()
 	else:
 		$Tip.hide()
@@ -23,18 +23,19 @@ func _process(_delta):
 func drop_item():
 	var item_name
 	Global.freeze(1)
-	if Global.cntLevel1 == 1:
+	if Global.cntLevel1 == 2:
 		item_name = 'nails'
-	elif Global.cntLevel1 == 2:
+	elif Global.cntLevel1 == 5:
 		item_name = 'sticks'
-	elif Global.cntLevel1 == 3:
+	elif Global.cntLevel1 == 7:
 		item_name = 'STANGEBERRY'
-	elif Global.cntLevel1 == 4:
+	elif Global.cntLevel1 == 8:
 		item_name = 'rope'
 	if PlayerInventory.free_slots != 0:
 		used = true
 		Global.cntLevel1 += 1
-		PlayerInventory.add_item(item_name)
+		if item_name:
+			PlayerInventory.add_item(item_name)
 	else:
 		$Tip/Label.text = 'No free slots'
 		yield(get_tree().create_timer(1), 'timeout')

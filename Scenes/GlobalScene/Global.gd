@@ -5,8 +5,9 @@ var isPlayerInStartScene = true
 var isPlayerInRestaurant = false
 var bodyPosition = Vector2(0, -10)
 var freezed := false
-var cntLevel1 = 0
+var cntLevel1 = 1
 var jump_strength = -3
+var talked_to_bridge = false
 
 func _ready():
 	pass

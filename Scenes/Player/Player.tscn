@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Player/Player4FPS.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/Player/main_character.png" type="Texture" id=4]
 [ext_resource path="res://assets/Player/jump_frame.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Inventory/Inventory.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player/PlayerSpeak.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12, 13 )
@@ -119,3 +120,12 @@ shape = SubResource( 1 )
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Inventory" parent="UI" instance=ExtResource( 6 )]
+
+[node name="PlayerSpeak" parent="." instance=ExtResource( 7 )]
+margin_left = -94.0
+margin_top = -72.0
+margin_right = -94.0
+margin_bottom = -72.0
+size_flags_horizontal = 6
+
+[connection signal="eat_berry" from="UI/Inventory" to="." method="_on_Inventory_eat_berry"]

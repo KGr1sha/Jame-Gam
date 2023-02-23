@@ -10,6 +10,7 @@ var items_collected = false
 var near_bridge = false
 var bridge_builded = false
 
+
 func _ready():
 	get_node("Bridge/Sprite").hide()
 
@@ -18,10 +19,12 @@ func _process(_delta):
 	if near_bridge and items_collected and Input.is_action_just_pressed("use_items") and not bridge_builded:
 		build()
 	if Input.is_action_just_pressed("test_input"):
+		Global.talkedWithChief = true
 		build()
 
 
 func _on_beforeBridge_body_entered(body):
+	Global.talked_to_bridge = true
 	near_bridge = true
 	var inventory = PlayerInventory.inventory
 	var needed_items = ['nails', 'rope', 'sticks']
@@ -31,10 +34,16 @@ func _on_beforeBridge_body_entered(body):
 		var item = inventory[slot]
 		if item in needed_items:
 			needed_items.remove(needed_items.find(item))
-	for n_item in needed_items:
-		needed_string += n_item 
+	
+	for n_item in range(len(needed_items)):
+		if n_item != len(needed_items) - 1:
+			needed_string += needed_items[n_item] + ', '
+		else:
+			needed_string += needed_items[n_item]
+	
 	if needed_items:
 		$Bridge/Tip.text = 'You need ' + needed_string + ' to build the bridge'
+		$Bridge/Tip.show()
 	else:
 		if bridge_builded == false:
 			$Bridge/Tip.text = 'E - build the bridge'
@@ -50,11 +59,7 @@ func _on_beforeBridge_body_exited(body):
 	
 func build():
 	$Bridge/Tip.hide()
-	PlayerInventory.inventory = {
-	 0: '',
-	 1: '',
-	 2: ''
-	}
+	PlayerInventory.clear()
 	PlayerInventory.free_slots = 3
 	var firstX = 2957
 	Global.freeze(5)
@@ -68,4 +73,4 @@ func build():
 		yield(get_tree().create_timer(0.21), "timeout")
 	$Bridge/CollisionShape2D.disabled = false
 	$CLOSED/CollisionShape2D.disabled = true
-	
+	pass

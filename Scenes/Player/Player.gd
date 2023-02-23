@@ -35,8 +35,14 @@ func _physics_process(delta):
 	
 	move_and_slide(move_direction * speed, Vector2.UP)
 	
+<<<<<<< HEAD
 	if is_on_floor():
 		jump_velocity = 0
+=======
+	if is_on_floor() or is_on_ceiling():
+		jump_velocity = 0
+	
+>>>>>>> c857186c961a2db1a10b4d91d1a1b47d60864254
 
 func _play_move_animation(move_direction):
 	if move_direction == gravity and is_on_floor():
@@ -51,3 +57,20 @@ func _play_move_animation(move_direction):
 		$AnimatedSprite.flip_h = false
 	elif move_direction.x < 0:
 		$AnimatedSprite.flip_h = true
+<<<<<<< HEAD
+=======
+
+
+func _on_Inventory_eat_berry():
+	var end_print = 'Feels kinda strange in my legs'
+	for i in range(len(end_print)):
+		$PlayerSpeak/VBoxContainer/HBoxContainer/Label.text += end_print[i]
+		yield(get_tree().create_timer(0.1), "timeout")
+	yield(get_tree().create_timer(1), "timeout")
+	jump_strength = -10
+	$PlayerSpeak.hide()
+	$PlayerSpeak/VBoxContainer/HBoxContainer/Label.text = ''
+
+
+
+>>>>>>> c857186c961a2db1a10b4d91d1a1b47d60864254
