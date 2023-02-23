@@ -23,14 +23,12 @@ func _process(_delta):
 func drop_item():
 	var item_name
 	Global.freeze(1)
-	if Global.cntLevel1 == 2:
+	if Global.cntLevel1 == 3:
 		item_name = 'nails'
-	elif Global.cntLevel1 == 5:
+	elif Global.cntLevel1 == 8:
 		item_name = 'sticks'
 	elif Global.cntLevel1 == 7:
 		item_name = 'STANGEBERRY'
-	elif Global.cntLevel1 == 8:
-		item_name = 'rope'
 	if PlayerInventory.free_slots != 0:
 		used = true
 		Global.cntLevel1 += 1

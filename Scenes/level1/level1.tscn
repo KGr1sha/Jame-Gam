@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=59 format=2]
+=======
+[gd_scene load_steps=77 format=2]
+>>>>>>> beb8d20a9659fbeee8d682903c925e2d80f95c1c
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/ground/black_square.png" type="Texture" id=2]
@@ -49,6 +53,15 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+
+[sub_resource type="CapsuleShape2D" id=51]
+radius = 43.0
+height = 64.0
+
+[sub_resource type="DynamicFont" id=52]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -511,9 +524,26 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 110, 0, 0, 111, 0, 0, 112, 0, 0, 113, 0, 0, 114, 0, 0, 115, 0, 0, 116, 0, 0, 117, 0, 0, 65644, 0, 0, 65645, 0, 0, 65646, 0, 0, 65647, 0, 0, 65648, 0, 0, 65649, 0, 0, 65650, 0, 0, 65651, 0, 0, 65652, 0, 0, 65653, 0, 0, 131180, 0, 0, 131181, 0, 0, 131182, 0, 0, 131183, 0, 0, 131184, 0, 0, 131185, 0, 0, 131186, 0, 0, 131187, 0, 0, 131188, 0, 0, 131189, 0, 0, 131190, 0, 0, 131191, 0, 0, 196712, 0, 0, 196713, 0, 0, 196714, 0, 0, 196716, 0, 0, 196717, 0, 0, 196718, 0, 0, 196719, 0, 0, 196720, 0, 0, 196721, 0, 0, 196722, 0, 0, 196723, 0, 0, 196724, 0, 0, 196725, 0, 0, 196726, 0, 0, 196727, 0, 0, 262246, 0, 0, 262247, 0, 0, 262248, 0, 0, 262249, 0, 0, 262250, 0, 0, 262251, 0, 0, 262252, 0, 0, 262253, 0, 0, 262254, 0, 0, 262255, 0, 0, 262256, 0, 0, 262257, 0, 0, 262258, 0, 0, 262259, 0, 0, 262260, 0, 0, 262261, 0, 0, 327781, 0, 0, 327782, 0, 0, 327783, 0, 0, 327784, 0, 0, 327785, 0, 0, 327786, 0, 0, 327787, 0, 0, 327788, 0, 0, 327789, 0, 0, 327790, 0, 0, 327791, 0, 0, 327792, 0, 0, 327793, 0, 0, 327794, 0, 0, 327795, 0, 0, 393313, 0, 0, 393314, 0, 0, 393315, 0, 0, 393316, 0, 0, 393317, 0, 0, 393318, 0, 0, 393319, 0, 0, 393320, 0, 0, 393321, 0, 0, 393322, 0, 0, 393323, 0, 0, 393324, 0, 0, 393325, 0, 0, 393326, 0, 0, 393327, 0, 0, 393328, 0, 0, 458846, 0, 0, 458847, 0, 0, 458848, 0, 0, 458849, 0, 0, 458850, 0, 0, 458851, 0, 0, 458852, 0, 0, 458853, 0, 0, 458854, 0, 0, 458855, 0, 0, 458856, 0, 0, 458857, 0, 0, 458858, 0, 0, 458859, 0, 0, 458860, 0, 0, 458861, 0, 0, 524378, 0, 0, 524379, 0, 0, 524380, 0, 0, 524381, 0, 0, 524382, 0, 0, 524383, 0, 0, 524384, 0, 0, 524385, 0, 0, 524386, 0, 0, 524387, 0, 0, 524388, 0, 0, 524389, 0, 0, 524390, 0, 0, 524391, 0, 0, 524392, 0, 0, 524393, 0, 0, 524394, 0, 0, 524395, 0, 0, 524396, 0, 0, 589913, 0, 0, 589914, 0, 0, 589915, 0, 0, 589916, 0, 0, 589917, 0, 0, 589918, 0, 0, 589919, 0, 0, 589920, 0, 0, 589921, 0, 0, 589922, 0, 0, 589923, 0, 0, 589924, 0, 0, 589925, 0, 0, 589926, 0, 0, 589927, 0, 0, 589928, 0, 0, 589929, 0, 0, 589930, 0, 0, 655448, 0, 0, 655449, 0, 0, 655450, 0, 0, 655451, 0, 0, 655452, 0, 0, 655453, 0, 0, 655454, 0, 0, 655455, 0, 0, 655456, 0, 0, 655457, 0, 0, 655458, 0, 0, 655459, 0, 0, 655460, 0, 0, 655461, 0, 0, 655462, 0, 0, 655463, 0, 0, 720984, 0, 0, 720985, 0, 0, 720986, 0, 0, 720987, 0, 0, 720988, 0, 0, 720989, 0, 0, 720990, 0, 0, 720991, 0, 0, 720992, 0, 0, 720993, 0, 0, 720994, 0, 0, 720995, 0, 0, 720996, 0, 0, 720997, 0, 0, 786520, 0, 0, 786521, 0, 0, 786522, 0, 0, 786523, 0, 0, 786524, 0, 0, 786525, 0, 0, 786526, 0, 0, 786527, 0, 0, 786528, 0, 0, 786529, 0, 0, 786530, 0, 0, 786531, 0, 0, 852057, 0, 0, 852058, 0, 0, 852059, 0, 0, 852060, 0, 0, 852061, 0, 0, 852062, 0, 0, 852063, 0, 0, 852064, 0, 0, 852065, 0, 0, 852066, 0, 0 )
 
-[node name="Rope" type="Sprite" parent="."]
+[node name="Rope" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="Rope"]
 position = Vector2( 1422, 362 )
 texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rope"]
+position = Vector2( 1423, 360 )
+shape = SubResource( 51 )
+
+[node name="Tip" type="Label" parent="Rope"]
+visible = false
+margin_left = 1427.0
+margin_top = 325.0
+margin_right = 1479.0
+margin_bottom = 339.0
+custom_fonts/font = SubResource( 52 )
+text = "E - take"
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -1475, 0 )
@@ -654,7 +684,10 @@ position = Vector2( 1523, 399 )
 position = Vector2( 3, -7 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 33 )
+<<<<<<< HEAD
 frame = 3
+=======
+>>>>>>> beb8d20a9659fbeee8d682903c925e2d80f95c1c
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Campfire"]
@@ -677,6 +710,8 @@ texture = ExtResource( 23 )
 energy = 0.9
 mode = 1
 
+[connection signal="body_entered" from="Rope" to="." method="_on_Rope_body_entered"]
+[connection signal="body_exited" from="Rope" to="." method="_on_Rope_body_exited"]
 [connection signal="body_entered" from="beforeBridge" to="." method="_on_beforeBridge_body_entered"]
 [connection signal="body_exited" from="beforeBridge" to="." method="_on_beforeBridge_body_exited"]
 [connection signal="body_entered" from="NextLevel" to="NextLevel" method="_on_NextLevel_body_entered"]

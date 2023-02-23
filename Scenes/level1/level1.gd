@@ -9,6 +9,8 @@ var timerForCollectItems = 1
 var items_collected = false
 var near_bridge = false
 var bridge_builded = false
+var player_near_rope = false
+var rope_used = false
 
 
 func _ready():
@@ -21,6 +23,11 @@ func _process(_delta):
 		Global.talkedWithChief = true
 		$Player/UI/Inventory.emit_signal("eat_berry")
 		build()
+	if Input.is_action_just_pressed("use_items") and player_near_rope:
+		if PlayerInventory.free_slots != 0:
+			PlayerInventory.add_item('rope')
+			$Rope.hide()
+			rope_used = true
 
 
 func _on_beforeBridge_body_entered(body):
@@ -74,3 +81,15 @@ func build():
 	$Bridge/CollisionShape2D.disabled = false
 	$CLOSED/CollisionShape2D.disabled = true
 	pass
+
+
+func _on_Rope_body_entered(body):
+	if not rope_used:
+		$Rope/Tip.show()
+		player_near_rope = true
+	
+
+
+func _on_Rope_body_exited(body):
+	$Rope/Tip.hide()
+	player_near_rope = false

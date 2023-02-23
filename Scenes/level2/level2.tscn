@@ -194,5 +194,9 @@ position = Vector2( -56, -174 )
 position = Vector2( -9, 130 )
 frames = SubResource( 9 )
 animation = "run"
+<<<<<<< HEAD
 frame = 2
+=======
+frame = 3
+>>>>>>> beb8d20a9659fbeee8d682903c925e2d80f95c1c
 playing = true
