@@ -30,6 +30,8 @@ func _ready():
 	$BloodyChef.show()
 	yield(get_tree().create_timer(1.5), "timeout")
 	pizdex_started = true
+	yield(get_tree().create_timer(2), "timeout")
+	get_tree().change_scene("res://Scenes/level3/level3.tscn")
 
 
 func _process(delta):
