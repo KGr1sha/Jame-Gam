@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/campfire.png-44b5d07421e9f36b5815c140534e4cef.stex"
+path="res://.import/backstone.png-715d9f4fa2b84071f1a9efd4c494286e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level1/campfire.png"
-dest_files=[ "res://.import/campfire.png-44b5d07421e9f36b5815c140534e4cef.stex" ]
+source_file="res://assets/ground/backstone.png"
+dest_files=[ "res://.import/backstone.png-715d9f4fa2b84071f1a9efd4c494286e.stex" ]
 
 [params]
 

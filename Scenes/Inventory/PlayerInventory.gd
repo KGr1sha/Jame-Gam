@@ -16,7 +16,6 @@ func add_item(item_name):
 func remove_item(slot_index):
 	inventory.erase(slot_index)
 	free_slots += 1
-	print(inventory)
 
 		
 func clear():

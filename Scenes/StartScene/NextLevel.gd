@@ -20,7 +20,6 @@ func _on_NextLevel_body_entered(body):
 		var player_speak = get_parent().get_node("Player/UI/PlayerSpeak/CenterContainer/Label")
 		var s = ["I'm hungry", "I'd better eat something before going there"]
 		var end_print = s[randi() % 2]
-		print(end_print)
 		for i in range(len(end_print)):
 			player_speak.text += end_print[i]
 			yield(get_tree().create_timer(0.04), "timeout")
