@@ -12,8 +12,7 @@ var bridge_builded = false
 
 
 func _ready():
-	get_node("Bridge/Sprite").hide()
-
+	pass
 
 func _process(_delta):
 	if near_bridge and items_collected and Input.is_action_just_pressed("use_items") and not bridge_builded:
