@@ -23,7 +23,7 @@ func _process(_delta):
 		Global.talkedWithChief = true
 		$Player/UI/Inventory.emit_signal("eat_berry")
 		build()
-	if Input.is_action_just_pressed("use_items") and player_near_rope:
+	if Input.is_action_just_pressed("use_items") and player_near_rope and !rope_used:
 		if PlayerInventory.free_slots != 0:
 			PlayerInventory.add_item('rope')
 			$Rope.hide()
@@ -86,6 +86,7 @@ func build():
 func _on_Rope_body_entered(body):
 	if not rope_used:
 		$Rope/Tip.show()
+		print($Rope/Tip.text)
 		player_near_rope = true
 	
 
@@ -93,3 +94,6 @@ func _on_Rope_body_entered(body):
 func _on_Rope_body_exited(body):
 	$Rope/Tip.hide()
 	player_near_rope = false
+
+
+

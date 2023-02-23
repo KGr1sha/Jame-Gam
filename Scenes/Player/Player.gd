@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 var gravity = Vector2.DOWN * 1.5
 var jump_velocity = 0.0
-var speed = 200 #150
+var speed = 600 #150
 var jump_strength = -3
 
 

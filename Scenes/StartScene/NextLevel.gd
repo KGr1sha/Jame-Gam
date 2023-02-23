@@ -16,7 +16,7 @@ func _on_NextLevel_body_entered(body):
 	if bodyNearNextLevel1 and Global.talkedWithChief:
 		Global.bodyPosition = SpawnLocation
 		get_tree().change_scene(next_scene)
-	else:
+	elif !Global.talked_to_bridge:
 		get_parent().get_node("Player/UI/PlayerSpeak").show()
 		var player_speak = get_parent().get_node("Player/UI/PlayerSpeak/CenterContainer/Label")
 		var s = ["I'm hungry", "I'd better eat something before going there"]
