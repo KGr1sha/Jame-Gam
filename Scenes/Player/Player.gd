@@ -54,13 +54,14 @@ func _play_move_animation(move_direction):
 
 func _on_Inventory_eat_berry():
 	var end_print = 'Feels kinda strange in my legs'
+	$UI/PlayerSpeak.show()
 	for i in range(len(end_print)):
-		$PlayerSpeak/VBoxContainer/HBoxContainer/Label.text += end_print[i]
-		yield(get_tree().create_timer(0.1), "timeout")
+		$UI/PlayerSpeak/CenterContainer/Label.text += end_print[i]
+		yield(get_tree().create_timer(0.04), "timeout")
 	yield(get_tree().create_timer(1), "timeout")
 	jump_strength = -7
-	$PlayerSpeak.hide()
-	$PlayerSpeak/VBoxContainer/HBoxContainer/Label.text = ''
+	$UI/PlayerSpeak.hide()
+	$UI/PlayerSpeak/CenterContainer/Label.text = ''
 
 
 
