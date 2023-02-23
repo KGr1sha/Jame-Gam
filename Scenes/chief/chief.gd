@@ -48,6 +48,7 @@ func dialogue():
 	dialogue_active = true
 	$Dialogue.show()
 	dialogue = load_dialogue()
+	print(dialogue)
 	next_script()
 
 
