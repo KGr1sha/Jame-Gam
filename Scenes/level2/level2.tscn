@@ -176,7 +176,7 @@ animations = [ {
 [node name="Node2D" type="Node2D"]
 
 [node name="StrangeHouse" type="Sprite" parent="."]
-position = Vector2( 938, -68 )
+position = Vector2( 2521, -59 )
 texture = ExtResource( 10 )
 
 [node name="TileMap" type="TileMap" parent="."]
