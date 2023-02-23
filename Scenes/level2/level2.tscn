@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/level2/level2.gd" type="Script" id=1]
 [ext_resource path="res://assets/ground/tree3.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://assets/ground/realEnt.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/level2/Ent.gd" type="Script" id=9]
 [ext_resource path="res://assets/ground/strangeHouse.png" type="Texture" id=10]
+[ext_resource path="res://assets/level2/sun.png" type="Texture" id=11]
+[ext_resource path="res://assets/level2/BAckGround1.png" type="Texture" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -163,6 +165,7 @@ script = ExtResource( 9 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Ent"]
 frames = SubResource( 10 )
 animation = "run"
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="Ent"]
@@ -176,6 +179,25 @@ shape = SubResource( 11 )
 [node name="StrangeHouse" type="Sprite" parent="."]
 position = Vector2( 2768, -64 )
 texture = ExtResource( 10 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Mountains" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 512, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Mountains"]
+position = Vector2( 0, -265 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Sun" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.03, 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Sun"]
+position = Vector2( 0, -220 )
+texture = ExtResource( 11 )
+centered = false
 
 [connection signal="body_entered" from="EntTrigger" to="." method="_on_EntTrigger_body_entered"]
 [connection signal="body_entered" from="Ent/Area2D" to="." method="Ent_catch"]
