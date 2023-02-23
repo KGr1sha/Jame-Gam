@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=13 format=2]
-=======
 [gd_scene load_steps=9 format=2]
->>>>>>> c857186c961a2db1a10b4d91d1a1b47d60864254
 
 [ext_resource path="res://Scenes/level1/Bush.gd" type="Script" id=1]
 [ext_resource path="res://assets/Fonts/ExpressionPro.ttf" type="DynamicFontData" id=3]
@@ -17,36 +13,13 @@ outline_size = 1
 outline_color = Color( 0.117647, 0.113725, 0.113725, 1 )
 font_data = ExtResource( 3 )
 
-<<<<<<< HEAD
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 4 )
-region = Rect2( 64, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 4 )
-region = Rect2( 64, 64, 64, 64 )
-
-=======
->>>>>>> c857186c961a2db1a10b4d91d1a1b47d60864254
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 128, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-<<<<<<< HEAD
-"frames": [ ExtResource( 5 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), ExtResource( 5 ) ],
-=======
 "frames": [ ExtResource( 5 ), SubResource( 8 ), ExtResource( 5 ) ],
->>>>>>> c857186c961a2db1a10b4d91d1a1b47d60864254
 "loop": false,
 "name": "default",
 "speed": 5.0
