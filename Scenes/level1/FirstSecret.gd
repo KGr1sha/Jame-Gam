@@ -10,12 +10,15 @@ func _process(_delta):
 		secret_founded = true
 		PlayerInventory.add_item(item_name)
 		Global.gems_collected += 1
+		print(Global.gems_collected)
 		self.hide()
 	pass
 
 func _on_Area2D_body_entered(body):
-	player_near_secret = true
+	if body.name == "Player":
+		player_near_secret = true
 
 
 func _on_Area2D_body_exited(body):
-	player_near_secret = false
+	if body.name == "Player":
+		player_near_secret = false

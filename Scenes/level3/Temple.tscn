@@ -183,10 +183,11 @@ texture = ExtResource( 7 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Chef"]
 position = Vector2( 45, -31 )
 frames = SubResource( 10 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Chef"]
+visible = false
 margin_left = 57.0
 margin_top = -121.0
 margin_right = 272.0

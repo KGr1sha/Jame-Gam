@@ -19,10 +19,6 @@ func _ready():
 func _process(_delta):
 	if near_bridge and items_collected and Input.is_action_just_pressed("use_items") and not bridge_builded:
 		build()
-	if Input.is_action_just_pressed("test_input"):
-		Global.talkedWithChief = true
-		$Player/UI/Inventory.emit_signal("eat_berry")
-		build()
 	if Input.is_action_just_pressed("use_items") and player_near_rope and !rope_used:
 		if PlayerInventory.free_slots != 0:
 			PlayerInventory.add_item('rope')

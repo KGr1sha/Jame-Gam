@@ -11,6 +11,9 @@ onready var chef_text = $Chef/NinePatchRect/MarginContainer/VBoxContainer/Talk
 var end = false
 
 
+func _ready():
+	$Player.position = Vector2(-520, -3)
+
 func _process(_delta):
 	if Input.is_action_just_pressed("use_items") and player_near_chef and not end:
 		$Chef/Tip.hide()
