@@ -8,6 +8,7 @@ var freezed := false
 var cntLevel1 = 1
 var talked_to_bridge = false
 var catched = false
+var secret_items_found = 0
 
 func _ready():
 	pass

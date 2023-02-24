@@ -14,7 +14,7 @@ use_mipmaps = true
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxLine" id=5]
-color = Color( 0.643137, 0.631373, 0.631373, 1 )
+color = Color( 1, 1, 1, 1 )
 thickness = 2
 
 [sub_resource type="DynamicFont" id=2]
