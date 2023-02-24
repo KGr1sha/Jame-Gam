@@ -6,7 +6,7 @@ func _ready():
 	BackGroundMusic.play()
 	if Global.catched:
 		$Player.speak('It IS possible. I know it')
-		$Player.jump_strength = -2
+	$Player.jump_strength = -2
 
 func _on_EntTrigger_body_entered(body):
 	BackGroundMusic.stream = load("res://Scenes/Music/LVL2 CHASE MAIN PART.mp3")

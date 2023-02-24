@@ -80,6 +80,8 @@ func build():
 		yield(get_tree().create_timer(0.21), "timeout")
 	$Bridge/CollisionShape2D.disabled = false
 	$CLOSED/CollisionShape2D.disabled = true
+	$FirstSecret.show()
+	$FirstSecret/Area2D.collision_layer = 3
 	pass
 
 
@@ -88,7 +90,6 @@ func _on_Rope_body_entered(body):
 		$Rope/Tip.show()
 		print($Rope/Tip.text)
 		player_near_rope = true
-	
 
 
 func _on_Rope_body_exited(body):
