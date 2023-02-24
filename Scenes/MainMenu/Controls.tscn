@@ -78,15 +78,15 @@ size_flags_horizontal = 3
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
 margin_left = 90.0
-margin_top = 94.0
+margin_top = 78.0
 margin_right = 402.0
-margin_bottom = 246.0
+margin_bottom = 261.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer"]
 margin_right = 312.0
-margin_bottom = 152.0
+margin_bottom = 183.0
 size_flags_horizontal = 2
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 2 )
@@ -94,6 +94,7 @@ text = "Left - A
 Right - D
 Jump - SPACE
 Interact - E
-Inventory slots - 1, 2, 3"
+Inventory slots - 1, 2, 3
+Pause - ESC"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]

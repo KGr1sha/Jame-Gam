@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Fonts/ExpressionPro.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/GlobalScene/Pause.gd" type="Script" id=2]
+[ext_resource path="res://assets/Fonts/CompassPro.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Pause" type="CanvasLayer"]
+pause_mode = 2
+layer = 100
+visible = false
+script = ExtResource( 2 )
+
+[node name="Pause" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.164706, 0.152941, 0.152941, 0.278431 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer"]
+margin_top = 10.0
+margin_right = 512.0
+margin_bottom = 300.0
+
+[node name="Label" type="Label" parent="Pause/MarginContainer/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 42.0
+size_flags_horizontal = 7
+custom_fonts/font = SubResource( 1 )
+text = "PAUSE"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Pause/MarginContainer/VBoxContainer"]
+margin_top = 46.0
+margin_right = 512.0
+margin_bottom = 290.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/MarginContainer/VBoxContainer/CenterContainer"]
+margin_left = 182.0
+margin_top = 85.0
+margin_right = 330.0
+margin_bottom = 159.0
+
+[node name="Resume" type="Button" parent="Pause/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+pause_mode = 2
+margin_right = 148.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 2 )
+text = "RESUME"
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pause/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 38.0
+margin_right = 148.0
+margin_bottom = 74.0
+
+[node name="VolumeDown" type="Button" parent="Pause/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+pause_mode = 2
+margin_right = 22.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 3 )
+text = "<"
+flat = true
+
+[node name="Label" type="Label" parent="Pause/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 26.0
+margin_top = 4.0
+margin_right = 122.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 4 )
+text = "VOLUME"
+
+[node name="VolumeUp" type="Button" parent="Pause/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+pause_mode = 2
+margin_left = 126.0
+margin_right = 148.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 5 )
+text = ">"
+flat = true
+
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/VolumeDown" to="." method="_on_VolumeDown_pressed"]
+[connection signal="pressed" from="Pause/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/VolumeUp" to="." method="_on_VolumeUp_pressed"]

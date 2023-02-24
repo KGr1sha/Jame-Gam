@@ -20,6 +20,7 @@ Global="*res://Scenes/GlobalScene/Global.tscn"
 PlayerVars="*res://Scenes/GlobalScene/Global.gd"
 BackGroundMusic="*res://Scenes/Music/BackGroundMusic.tscn"
 PlayerInventory="*res://Scenes/Inventory/PlayerInventory.gd"
+Pause="*res://Scenes/GlobalScene/Pause.tscn"
 
 [display]
 
@@ -108,6 +109,11 @@ slot_2={
 slot_3={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
