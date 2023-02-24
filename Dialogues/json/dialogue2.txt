@@ -1,0 +1,8 @@
+[
+	{"name": "al'Pachino", "text": "You, sitting in front of the screen."}
+	{"name": "al'Pachino", "text": "You are a true gamer!"}
+	{"name": "al'Pachino", "text": "You proved that you are worthy not only for butter chicken,"}
+	{"name": "al'Pachino", "text": "But for the golden one!"}
+	{"name": "al'Pachino", "text": "Now you can stay here, in the golden temple for as long as you want to."}
+	{"name": "al'Pachino", "text": "Bye, but we'll met again."}
+]

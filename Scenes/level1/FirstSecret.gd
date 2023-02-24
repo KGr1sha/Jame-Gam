@@ -9,6 +9,7 @@ func _process(_delta):
 	!secret_founded:
 		secret_founded = true
 		PlayerInventory.add_item(item_name)
+		Global.gems_collected += 1
 		self.hide()
 	pass
 

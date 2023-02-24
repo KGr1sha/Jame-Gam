@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://assets/level3/tileset_level3.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,16 @@
 [ext_resource path="res://assets/Fonts/ExpressionPro.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Scenes/level1/FirstSecret.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Inventory/ItemIcons/BlueGem.png" type="Texture" id=16]
+[ext_resource path="res://assets/level3/FUCKEGGS.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/level3/SecretStands.gd" type="Script" id=18]
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 70.5, 31 )
+
+[sub_resource type="DynamicFont" id=30]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 14 )
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -617,6 +627,40 @@ position = Vector2( 7107, -3105 )
 scale = Vector2( 0.8, 1 )
 texture = ExtResource( 12 )
 
+[node name="SecretStands" type="Node2D" parent="."]
+position = Vector2( 797, -1446 )
+script = ExtResource( 18 )
+secret_scene = "res://Scenes/level3/Temple.tscn"
+
+[node name="Fuckeggs" type="Sprite" parent="SecretStands"]
+position = Vector2( -24, 0 )
+texture = ExtResource( 17 )
+
+[node name="Fuckeggs2" type="Sprite" parent="SecretStands"]
+position = Vector2( -60, 0 )
+texture = ExtResource( 17 )
+
+[node name="Fuckeggs3" type="Sprite" parent="SecretStands"]
+position = Vector2( 11, 0 )
+texture = ExtResource( 17 )
+
+[node name="SecretTrigger" type="Area2D" parent="SecretStands"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretStands/SecretTrigger"]
+position = Vector2( -23.5, 1 )
+shape = SubResource( 29 )
+
+[node name="Tip" type="Label" parent="SecretStands"]
+visible = false
+margin_left = -70.0
+margin_top = -41.0
+margin_right = 27.0
+margin_bottom = -27.0
+custom_fonts/font = SubResource( 30 )
+text = "E - Insert gems"
+align = 1
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 19 )
 cell_size = Vector2( 32, 32 )
@@ -732,6 +776,8 @@ text = "E - take"
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 51, -46 )
 
+[connection signal="body_entered" from="SecretStands/SecretTrigger" to="SecretStands" method="_on_SecretTrigger_body_entered"]
+[connection signal="body_exited" from="SecretStands/SecretTrigger" to="SecretStands" method="_on_SecretTrigger_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="StandArea" to="." method="_on_StandArea_body_entered"]
 [connection signal="body_entered" from="ThirdSecret/Area2D" to="ThirdSecret" method="_on_Area2D_body_entered"]

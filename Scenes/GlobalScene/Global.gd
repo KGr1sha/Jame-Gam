@@ -9,6 +9,7 @@ var cntLevel1 = 1
 var talked_to_bridge = false
 var catched = false
 var secret_items_found = 0
+var gems_collected = 0
 
 func _ready():
 	pass
