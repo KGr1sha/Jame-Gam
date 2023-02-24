@@ -221,7 +221,6 @@ position = Vector2( 0, -20 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 10 )
 animation = "run"
-frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="Ent"]
@@ -263,6 +262,7 @@ color = Color( 0.67451, 0.513726, 0.447059, 1 )
 [node name="Door" parent="." instance=ExtResource( 14 )]
 position = Vector2( 4380, -26 )
 next_scene_path = "res://Scenes/level2/strangehouse.tscn"
+spawnLocation = Vector2( -84, -1 )
 
 [node name="Tip" type="Control" parent="Door"]
 visible = false

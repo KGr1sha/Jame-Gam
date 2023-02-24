@@ -723,11 +723,6 @@ anims/RESET = SubResource( 24 )
 anims/cutscene = SubResource( 25 )
 anims/default = SubResource( 23 )
 
-[node name="Butterchicken0" type="Sprite" parent="."]
-position = Vector2( 7106, -3122 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 13 )
-
 [node name="Titles" type="Label" parent="."]
 margin_left = 7066.0
 margin_top = -3709.0
@@ -739,10 +734,10 @@ Hope you enjoyed it.
 
 Authors:
 
-Broomer
-Grisha+=K
-krxpt
-iafbifb
+Broomer - Main developer, artist
+Grisha+=K - Main developer
+krxpt - Music
+iafbifb - artist
 
 By the way, there is another end of this story.
 Maybe you want to try to find it?"
@@ -775,6 +770,14 @@ text = "E - take"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 51, -46 )
+
+[node name="Butterchicken0" type="Sprite" parent="."]
+position = Vector2( 7106, -3122 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.658824, 0.65098, 0.65098, 1 )
 
 [connection signal="body_entered" from="SecretStands/SecretTrigger" to="SecretStands" method="_on_SecretTrigger_body_entered"]
 [connection signal="body_exited" from="SecretStands/SecretTrigger" to="SecretStands" method="_on_SecretTrigger_body_exited"]

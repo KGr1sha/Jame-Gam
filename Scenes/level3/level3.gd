@@ -1,5 +1,7 @@
 extends Node2D
 
+var player_finished_talking = false
+
 func _ready():
 	BackGroundMusic.stream = load("res://Scenes/Music/LVL1.mp3")
 	BackGroundMusic.play()
@@ -12,12 +14,18 @@ func _ready():
 	$Player.speak('Was this all ... a dream?')
 	yield(get_tree().create_timer(3), "timeout")
 	$Player.speak('I think the butter chicken is close. I can smell it.')
+	yield(get_tree().create_timer(3), "timeout")
+	player_finished_talking = true
 	
 	
 
 
 func _on_Area2D_body_entered(body):
-	$Player.speak("I think it's bad idea to go there.")
+	if player_finished_talking:
+		$Player.speak("I think it's bad idea to go there.")
+		player_finished_talking = false
+		yield(get_tree().create_timer(3), "timeout")
+		player_finished_talking = true
 
 
 func _on_StandArea_body_entered(body):
