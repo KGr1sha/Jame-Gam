@@ -511,10 +511,10 @@ func _ready():
 extents = Vector2( 40.5, 153.5 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 81.5, 169.5 )
+extents = Vector2( 81.5, 893.75 )
 
 [sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 30.5, 120.5 )
+extents = Vector2( 30.5, 723 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 22 )
@@ -660,7 +660,7 @@ collision_mask = 0
 mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CLOSED"]
-position = Vector2( 2980, 20 )
+position = Vector2( 2980, -704.25 )
 shape = SubResource( 6 )
 
 [node name="CLOSED2" type="RigidBody2D" parent="."]
@@ -681,7 +681,7 @@ next_scene = "res://Scenes/level2/level2.tscn"
 SpawnLocation = Vector2( 0, 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevel"]
-position = Vector2( 374.5, -95.5 )
+position = Vector2( 374.5, -698 )
 shape = SubResource( 27 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
@@ -716,7 +716,7 @@ position = Vector2( 1523, 399 )
 position = Vector2( 3, -7 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 33 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="Light2D" type="Light2D" parent="Campfire"]
