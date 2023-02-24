@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Settings/Settings.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
@@ -49,33 +49,32 @@ expand = true
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 50
-custom_constants/margin_top = 20
-custom_constants/margin_left = 50
-custom_constants/margin_bottom = 20
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 50.0
-margin_top = 20.0
-margin_right = 974.0
-margin_bottom = 580.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 502.0
+margin_bottom = 300.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_right = 924.0
+margin_right = 492.0
 margin_bottom = 70.0
 alignment = 1
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 105.0
+margin_right = 86.0
 margin_bottom = 70.0
-size_flags_horizontal = 2
 custom_fonts/font = SubResource( 1 )
 text = "<BACK"
 flat = true
+align = 0
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 299.0
-margin_right = 624.0
+margin_left = 90.0
+margin_right = 415.0
 margin_bottom = 70.0
 rect_pivot_offset = Vector2( 1045, 644 )
 size_flags_horizontal = 3
@@ -84,16 +83,16 @@ text = "SETTINGS"
 align = 1
 
 [node name="Container" type="Container" parent="MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 628.0
-margin_right = 924.0
+margin_left = 419.0
+margin_right = 492.0
 margin_bottom = 70.0
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_left = 331.0
-margin_top = 276.0
-margin_right = 593.0
-margin_bottom = 357.0
+margin_left = 115.0
+margin_top = 141.0
+margin_right = 377.0
+margin_bottom = 222.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
 alignment = 1
