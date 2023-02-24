@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LVL3.mp3-e1a565a7c7bee305c14f39b3b20537a2.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Music/LVL3.mp3"
+dest_files=[ "res://.import/LVL3.mp3-e1a565a7c7bee305c14f39b3b20537a2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

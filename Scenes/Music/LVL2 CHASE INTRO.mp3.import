@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LVL2 CHASE INTRO.mp3-d2a243c4cd6300ca2ad2370e6b9c7e8e.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Music/LVL2 CHASE INTRO.mp3"
+dest_files=[ "res://.import/LVL2 CHASE INTRO.mp3-d2a243c4cd6300ca2ad2370e6b9c7e8e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

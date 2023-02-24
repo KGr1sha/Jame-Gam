@@ -13,8 +13,8 @@
 [ext_resource path="res://assets/level2/candle.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/level2/strangehouse.gd" type="Script" id=12]
 [ext_resource path="res://assets/level2/window.png" type="Texture" id=13]
-[ext_resource path="res://assets/Player/chief.png" type="Texture" id=14]
-[ext_resource path="res://assets/ground/ent.png" type="Texture" id=15]
+[ext_resource path="res://assets/level2/bloodychief.png" type="Texture" id=14]
+[ext_resource path="res://assets/level2/bloodyent.png" type="Texture" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -192,10 +192,10 @@ color = Color( 0.392157, 0.384314, 0.384314, 1 )
 
 [node name="BloodyChef" type="Sprite" parent="."]
 visible = false
-position = Vector2( 1, -73 )
+position = Vector2( -1, -71 )
 texture = ExtResource( 14 )
 
 [node name="BloodyEnt" type="Sprite" parent="."]
 visible = false
-position = Vector2( 0, -73 )
+position = Vector2( -4, -52 )
 texture = ExtResource( 15 )

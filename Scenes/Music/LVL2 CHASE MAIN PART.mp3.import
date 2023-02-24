@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/LVL2 CHASE MAIN PART.mp3-ba7066a287a51d78460afab7c7f047a0.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Music/LVL2 CHASE MAIN PART.mp3"
+dest_files=[ "res://.import/LVL2 CHASE MAIN PART.mp3-ba7066a287a51d78460afab7c7f047a0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -7,7 +7,7 @@ var global_dark = false
 
 
 func _ready():
-	$Player.speak("I have a really strange feeling after all theese berries")
+	$Player.speak("I have a really strange feeling after all those berries")
 	yield(get_tree().create_timer(4), "timeout")
 	pizdex_started = true
 	yield(get_tree().create_timer(2), "timeout")
