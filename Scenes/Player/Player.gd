@@ -3,10 +3,13 @@ extends KinematicBody2D
 
 var gravity = Vector2.DOWN * 1.5
 var jump_velocity = 0.0
-var speed = 400 #160
+var speed = 1000 #160
 var jump_strength = -3
 var tired = false
 var speed_minus_checker = true
+var in_cutscene = false
+var zooming_out = false
+var time = 0.0
 
 
 func _ready():
@@ -43,21 +46,27 @@ func _physics_process(delta):
 	
 	if is_on_floor() or is_on_ceiling():
 		jump_velocity = 0
+	if zooming_out:
+		time += delta
+		$Camera2D.zoom +=Vector2(1, 1) * ( 1 + 1.9 * time)
+		if $Camera2D.zoom.x >= 2:
+			zooming_out = false
 	
 
 func _play_move_animation(move_direction):
-	if move_direction == gravity and is_on_floor():
-		$AnimatedSprite.play("idle")
-	elif move_direction.x != 0 and is_on_floor():
-		$AnimatedSprite.play("run")
-	
-	if not is_on_floor():
-		$AnimatedSprite.play("jump")
+	if not in_cutscene:
+		if move_direction == gravity and is_on_floor():
+			$AnimatedSprite.play("idle")
+		elif move_direction.x != 0 and is_on_floor():
+			$AnimatedSprite.play("run")
 		
-	if move_direction.x > 0:
-		$AnimatedSprite.flip_h = false
-	elif move_direction.x < 0:
-		$AnimatedSprite.flip_h = true
+		if not is_on_floor():
+			$AnimatedSprite.play("jump")
+			
+		if move_direction.x > 0:
+			$AnimatedSprite.flip_h = false
+		elif move_direction.x < 0:
+			$AnimatedSprite.flip_h = true
 
 
 func _on_Inventory_eat_berry(): 
@@ -76,5 +85,15 @@ func speak(end_print):
 func _on_Inventory_eat_just_berry():
 	speak('Feels better!')
 	speed += 150
+	
 
+func play_anim(animation_name):
+	in_cutscene = true
+	$AnimatedSprite.play(animation_name)
+
+func stop_anim():
+	$AnimatedSprite.stop()
+
+func zoom_out():
+	zooming_out = true
 

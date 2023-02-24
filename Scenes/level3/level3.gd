@@ -18,3 +18,9 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	$Player.speak("I think it's bad idea to go there.")
+
+
+func _on_StandArea_body_entered(body):
+	$StandArea/AnimationPlayer.play("cutscene")
+	Global.freezed = true
+	yield(get_tree().create_timer(1), "timeout")

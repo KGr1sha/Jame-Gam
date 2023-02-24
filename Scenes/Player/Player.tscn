@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Player/Player4FPS.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/Player/jump_frame.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Inventory/Inventory.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Player/PlayerSpeak.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/Player/sit_frame.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12, 13 )
@@ -88,6 +89,11 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "sit",
+"speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -102,7 +108,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -24 )
 frames = SubResource( 6 )
-animation = "jump"
+animation = "sit"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -80 )
